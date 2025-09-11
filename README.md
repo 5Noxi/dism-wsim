@@ -1,4 +1,4 @@
-# DISM-WSIM
+# DISM-WSIM - Not Finished!
 Guide on how to create your own customized and automated Windows installation.
 
 
