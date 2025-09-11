@@ -10,9 +10,8 @@ winget install Microsoft.WindowsADK
 ```
 
 Downloading the preferred image:
-> https://massgrave.dev/genuine-installation-media
-> 
-> https://uupdump.net/
+- [massgrave.dev](https://massgrave.dev/genuine-installation-media)
+- [uupdump.net](https://uupdump.net/)
 
 ## Installation / Configuration Folder
 Creating your personal `Installation`/`Configuration` or whatever you want to call it folder, example structure:
