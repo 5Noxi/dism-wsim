@@ -120,10 +120,23 @@ Extracting the `.iso`:
 ```
 Removing indexes (only leaving `Windows 11 IoT Enterprise LTSC`:
 ```ps
-Get-WindowsImage -ImagePath "$home\Desktop\Stock\sources\install.wim"
+$wimpath = "$home\Desktop\Stock\sources\install.wim"
+# Examples
+$remindex = @(
+    #24H2
+    "Windows 11 Enterprise LTSC",
+    "Windows 11 IoT Enterprise Subscription LTSC",
+    #25H2
+    "Windows 11 Enterprise",
+    "Windows 11 IoT Enterprise Subscription"
+)
 
-Remove-WindowsImage -ImagePath "$home\Desktop\Stock\sources\install.wim" -Name "Windows 11 Enterprise LTSC"
-Remove-WindowsImage -ImagePath "$home\Desktop\Stock\sources\install.wim" -Name "Windows 11 IoT Enterprise Subscription LTSC"
+$images = Get-WindowsImage -ImagePath $wimpath
+foreach ($name in $remindex) {
+    if ($images.name -contains $name) {
+        Remove-WindowsImage -ImagePath $wimpath -Name $name
+    }
+}
 ```
 Creating the mount folder (`Index 1 = Windows 11 IoT Enterprise LTSC`):
 ```ps
